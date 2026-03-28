@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Code, ExternalLink } from "lucide-react";
 
 const secondaryProjects = [
   {
@@ -25,64 +27,50 @@ const secondaryProjects = [
 
 export default function ProjectsFrontEnd() {
   return (
-    <section
-      id="secondary-projects"
-      className="py-16 bg-gray-100 dark:bg-gray-800"
-    >
+    <section id="secondary-projects" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-10 text-center">
-          Other Projects
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl font-bold mb-2">Other <span className="text-slate-500">Experiments</span></h2>
+          <div className="h-1 w-20 bg-[#6D4AFF] rounded-full" />
+        </motion.div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {secondaryProjects.map((project, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="break-inside-avoid bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className="glass-card group p-6 rounded-2xl flex flex-col justify-between hover:border-[#6D4AFF]/30 transition-all duration-300"
             >
-              {/* Small Image Placeholder */}
-              <div className="bg-gray-200 dark:bg-gray-600 h-32 flex items-center justify-center text-gray-500 dark:text-gray-300 font-medium text-sm">
-                Image
-              </div>
-
-              <div className="p-4 flex flex-col justify-between h-full">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                  {project.name}
-                </h3>
-
-                <div className="flex flex-wrap gap-1 mb-2">
-                  {project.tech.map((tech, tidx) => (
-                    <span
-                      key={tidx}
-                      className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-gray-800 dark:text-gray-200"
-                    >
-                      {tech}
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-400 mb-6 group-hover:text-[#6D4AFF] group-hover:bg-[#6D4AFF]/10 transition-colors">
+                  <Code size={24} />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{project.name}</h3>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((t, i) => (
+                    <span key={i} className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">
+                      {t}
                     </span>
                   ))}
                 </div>
-
-                <a
-                  href={project.link}
-                  className="inline-flex items-center justify-center px-3 py-1 bg-[#6D4AFF] text-white text-xs font-medium rounded-md hover:bg-[#5b3ee6] transition-all duration-200 shadow-sm hover:shadow-md"
-                >
-                  View
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 ml-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </a>
               </div>
-            </div>
+
+              <a
+                href={project.link}
+                className="flex items-center gap-2 text-sm font-bold text-[#6D4AFF] opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                View Live <ExternalLink size={14} />
+              </a>
+            </motion.div>
           ))}
         </div>
       </div>
