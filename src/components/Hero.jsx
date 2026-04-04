@@ -12,9 +12,10 @@ export default function Hero() {
       <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-[#6D4AFF]/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-blue-400/10 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2" />
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-[104px]  items-center">
         {/* Text Content */}
         <motion.div
+          className="lg:col-span-7"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -32,20 +33,20 @@ export default function Hero() {
             Available for New Projects
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
-            Crafting Digital <br />
-            <span className="text-gradient">Experiences</span>
+          <h1 className="text-4xl md:text-[65px] font-bold leading-[1.1] mb-5">
+            Full-Stack Developer <br />
+            <span className="text-gradient"> Laravel & React </span>
           </h1>
 
           <p className="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-lg leading-relaxed">
             I'm{" "}
             <span className="text-slate-900 dark:text-white font-bold">
-              Muath
+              Muad
             </span>
-            , a Full-Stack Developer specializing in building{" "}
+            , a Full-Stack Developer specializing in{" "}
             <span className="text-slate-900 dark:text-white">Laravel</span> &
             <span className="text-slate-900 dark:text-white"> React</span>{" "}
-            applications with modern design at the core.
+            creating modern web applications with a focus on performance, scalability, and clean design.
           </p>
 
           <div className="flex flex-wrap gap-4 items-center">
@@ -55,19 +56,21 @@ export default function Hero() {
               whileTap={{ scale: 0.98 }}
               className="px-8 py-4 bg-slate-900 dark:bg-slate-50 text-white dark:text-slate-900 rounded-2xl font-bold flex items-center gap-2 shadow-xl shadow-slate-900/10 dark:shadow-none"
             >
-              Explore My Work
+              View My Projects
               <ArrowRight size={20} />
             </motion.a>
 
             <div className="flex items-center gap-2 ml-2">
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Mail, href: "#" },
+                { icon: Github, href: "https://github.com/Muad-Ahmed" },
+                { icon: Linkedin, href: "http://www.linkedin.com/in/muad-al-dhubaibi-5507023b6" },
+                { icon: Mail, href: "mailto:muad8010@gmail.com" },
               ].map((social, idx) => (
                 <motion.a
                   key={idx}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{
                     scale: 1.1,
                     backgroundColor: "rgba(109, 74, 255, 0.1)",
@@ -86,7 +89,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative flex justify-center lg:justify-end"
+          className="relative flex lg:col-span-5 justify-center lg:justify-end"
         >
           <div className="relative w-72 h-72 sm:w-96 sm:h-96">
             {/* Background Blob */}
@@ -98,8 +101,8 @@ export default function Hero() {
                 <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-sm font-medium italic">
                   {/* Image Placeholder*/}
                   <img
-                    src="public/personal.jpg"
-                    className="overflow-hidden scale-110 origin-[center_7%]"
+                    src="/personal.jpg"
+                    className="overflow-hidden scale-[1.1] origin-[center_7%]"
                   />
                 </div>
                 {/* Overlay on hover */}
@@ -114,12 +117,12 @@ export default function Hero() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -right-6 top-1/4 glass-card px-4 py-3 rounded-2xl shadow-2xl border-white/40 dark:border-slate-700/80"
+                className="absolute -right-12 top-1/4 glass-card px-4 py-3 rounded-2xl shadow-2xl border-white/40 dark:border-slate-700/80"
               >
                 <div className="text-xs text-slate-500 font-bold uppercase tracking-widest mb-1">
-                  Experience
+                  Skills
                 </div>
-                <div className="text-xl font-bold">2+ Years</div>
+                <div className="text-lg font-bold">Project-Based</div>
               </motion.div>
 
               <motion.div
@@ -140,19 +143,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <style jsx>{`
-        @keyframes blob {
-          0% {
-            transform: scale(1) translate(0px, 0px);
-          }
-          50% {
-            transform: scale(1.1) translate(20px, -20px);
-          }
-          100% {
-            transform: scale(1) translate(0px, 0px);
-          }
-        }
-      `}</style>
     </section>
   );
 }

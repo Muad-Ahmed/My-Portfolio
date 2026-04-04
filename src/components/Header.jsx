@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, Download } from "lucide-react";
+import { Menu, X, Sun, Moon, Download, FileText, ExternalLink } from "lucide-react";
 
 export default function Header({ toggleDarkMode, isDark }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ export default function Header({ toggleDarkMode, isDark }) {
             className="text-2xl font-bold tracking-tighter flex items-center gap-2"
           >
             <span className="w-8 h-8 bg-gradient-to-br from-[#6D4AFF] to-[#8B6EFF] rounded-lg flex items-center justify-center text-white text-lg">M</span>
-            <span className="hidden sm:inline-block">Muath</span>
+            <span className="hidden sm:inline-block">Muad</span>
           </motion.a>
 
           {/* Desktop Nav */}
@@ -65,13 +65,16 @@ export default function Header({ toggleDarkMode, isDark }) {
             </button>
 
             <motion.a
-              href="/cv.pdf"
+              href="/Muad-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-slate-50 text-white dark:text-slate-900 text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-[#6D4AFF]/20 transition-all duration-300"
             >
-              <Download size={16} />
+              <FileText size={16} />
               Resume
+              <ExternalLink size={14} className="opacity-50" />
             </motion.a>
           </div>
 
@@ -108,7 +111,7 @@ export default function Header({ toggleDarkMode, isDark }) {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-[#6D4AFF] transition-colors"
+                  className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#6D4AFF] transition-colors"
                 >
                   {link.name}
                 </a>

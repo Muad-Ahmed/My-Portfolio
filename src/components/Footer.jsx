@@ -1,4 +1,5 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,19 +11,19 @@ export default function Footer() {
           {/* Brand & Copyright */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="text-xl font-bold tracking-tighter">
-              <span className="text-[#6D4AFF]">M</span>uath
+              <span className="text-[#6D4AFF]">M</span>uad
             </div>
             <p className="text-sm text-slate-500 flex items-center gap-1">
-              © {currentYear} Created with <Heart size={14} className="text-red-500 fill-red-500" /> by Muath
+              © {currentYear} | Muad — Full Stack Developer
             </p>
           </div>
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {[
-              { icon: Github, href: "https://github.com/", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-              { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
+              { icon: Github, href: "https://github.com/Muad-Ahmed", label: "GitHub" },
+              { icon: Linkedin, href: "http://www.linkedin.com/in/muad-al-dhubaibi-5507023b6", label: "LinkedIn" },
+              { icon: SiWhatsapp, href: "https://wa.me/966506373936", label: "WhatsApp" },
             ].map((social, idx) => (
               <a
                 key={idx}
@@ -40,7 +41,7 @@ export default function Footer() {
           {/* Tagline or Brief */}
           <div className="text-right hidden md:block">
             <p className="text-sm font-medium text-slate-400 max-w-[200px]">
-              Building modern web solutions with precision and passion.
+              Building modern web solutions built for the modern web.
             </p>
           </div>
         </div>

@@ -11,11 +11,10 @@ import { useState, useLayoutEffect } from "react";
 function App() {
   // Dark mode state
   const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") return false;
+    if (typeof window === "undefined") return true;
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") return true;
-    if (savedTheme === "light") return false;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // Default to dark (true) unless explicitly saved as "light"
+    return savedTheme !== "light";
   });
 
   // Sync <html> class before paint to prevent flash
