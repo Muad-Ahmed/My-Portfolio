@@ -91,7 +91,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative flex lg:col-span-5 justify-center lg:justify-end"
         >
-          <div className="relative w-72 h-72 sm:w-96 sm:h-96">
+          <div className="relative w-80 h-80 sm:w-96 sm:h-96">
             {/* Background Blob */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#6D4AFF] to-[#8B6EFF] rounded-[30% 70% 70% 30% / 30% 30% 70% 70%] animate-[blob_7s_infinite_alternate] opacity-20 blur-2xl" />
 
