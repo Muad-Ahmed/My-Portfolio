@@ -24,7 +24,7 @@ export default function Header({ toggleDarkMode, isDark }) {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-2 md:py-3" : "py-3 md:py-5"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -117,7 +117,7 @@ export default function Header({ toggleDarkMode, isDark }) {
                 </a>
               ))}
               <a
-                href="/cv.pdf"
+                href="/Muad-resume.pdf"
                 className="mt-2 flex items-center justify-center gap-2 w-full py-3 bg-[#6D4AFF] text-white rounded-xl font-semibold"
               >
                 <Download size={18} />

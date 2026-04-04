@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center pt-32 pb-16 md:pt-20 md:pb-0 overflow-hidden"
     >
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-[#6D4AFF]/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />

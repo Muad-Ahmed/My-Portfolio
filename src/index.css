@@ -12,6 +12,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    /* ~80px for mobile */
+  }
+
+  @screen md {
+    html {
+      scroll-padding-top: 6rem;
+      /* ~96px for desktop */
+    }
   }
 
   :root {
