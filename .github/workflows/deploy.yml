@@ -44,4 +44,5 @@ jobs:
           script: |
             chown -R www-data:www-data /var/www/portfolio
             chmod -R 755 /var/www/portfolio
+            rm -rf /var/cache/nginx/*
             systemctl restart nginx

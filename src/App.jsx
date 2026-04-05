@@ -31,7 +31,7 @@ function App() {
     <>
       <Header toggleDarkMode={toggleDarkMode} isDark={isDark} />
       <Hero />
-      <h1>Testing 2</h1>
+      <h1>Testing 3</h1>
       <ProjectsFullStack />
       <ProjectsFrontEnd />
       <Skills />
