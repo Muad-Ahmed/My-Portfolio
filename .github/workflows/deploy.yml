@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "dist/*"
-          target: "/var/www/portfolio"
+          target: "/var/www/portfolio/dist"
           strip_components: 1
           overwrite: true
 
@@ -42,7 +42,6 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            chown -R www-data:www-data /var/www/portfolio
-            chmod -R 755 /var/www/portfolio
-            rm -rf /var/cache/nginx/*
+            chown -R www-data:www-data /var/www/portfolio/dist
+            chmod -R 755 /var/www/portfolio/dist
             systemctl restart nginx
