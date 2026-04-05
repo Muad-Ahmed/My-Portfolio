@@ -104,8 +104,12 @@ export default function ProjectsFrontEnd() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              onClick={() => window.open(project.live, "_blank")}
-              className="group relative h-[280px] rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl hover:border-[#6D4AFF]/50 transition-all duration-500 cursor-pointer"
+              onClick={() => {
+                if (window.innerWidth >= 1024) {
+                  window.open(project.live, "_blank");
+                }
+              }}
+              className="group relative h-[280px] rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl hover:border-[#6D4AFF]/50 transition-all duration-500 lg:cursor-pointer cursor-default"
             >
               {/* Blurred Background Image */}
               <div
@@ -159,7 +163,7 @@ export default function ProjectsFrontEnd() {
 
                 {/* Mobile-Only Action Guide (Under Name) */}
                 <div className="md:hidden mt-3 flex items-center gap-2 group-hover:opacity-0 transition-all duration-300">
-                  <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#6D4AFF]/20 backdrop-blur-md border border-[#6D4AFF]/30 text-white font-bold text-[10px] uppercase tracking-wider">
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#6D4AFF]/30 backdrop-blur-md border border-[#6D4AFF]/30 text-white font-bold text-[10px] uppercase tracking-wider">
                     Details <Info size={12} className="text-[#6D4AFF]" />
                   </div>
 
